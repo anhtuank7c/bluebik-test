@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { useCallback, useMemo, useState } from 'react';
 import Layout from 'constants/Layout';
-import { Step } from 'app/(onboarding)/data';
+import { Step } from 'stores/onboarding';
 import { ListItem } from '../ListItem';
 import { Button } from '../Button';
 

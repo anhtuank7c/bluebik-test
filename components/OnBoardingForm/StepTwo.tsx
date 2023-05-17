@@ -3,8 +3,7 @@ import { Alert, View } from 'react-native';
 import { Masks } from 'react-native-mask-input';
 import { useCallback, useMemo, useState } from 'react';
 import { Button } from 'components/Button';
-import { Step } from 'app/(onboarding)/data';
-import { StepTwoResult } from 'stores/onboarding';
+import { Step, StepTwoResult } from 'stores/onboarding';
 import { TextInput } from '../TextInput';
 
 type StepTwoProps = {

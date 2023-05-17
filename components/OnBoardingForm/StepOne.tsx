@@ -2,8 +2,7 @@ import Layout from 'constants/Layout';
 import { Alert, View } from 'react-native';
 import { Button } from 'components/Button';
 import { useCallback, useMemo, useState } from 'react';
-import { Step } from 'app/(onboarding)/data';
-import { StepOneResult } from 'stores/onboarding';
+import { Step, StepOneResult } from 'stores/onboarding';
 import { TextInput } from '../TextInput';
 
 type StepOneProps = {
