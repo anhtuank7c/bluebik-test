@@ -19,7 +19,7 @@ Unit test: `npm run test`
 
 **Before test E2E**: [Config devices to match your environment first](https://wix.github.io/Detox/docs/introduction/project-setup#step-3-device-configs)
 
-E2E test on iOS: `npm run e2e-ios-debug` (You may encoured iPhone 14 Pro simulator doesn't exist on your machine)
+E2E test on iOS: `npm run e2e-ios-debug` (You may got an issue with iPhone 14 Pro simulator which may not exist on your machine if not config devices)
 
 E2E test on Android: `npm run e2e-ios-debug`
 
