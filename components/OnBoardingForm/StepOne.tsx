@@ -6,11 +6,12 @@ import { Step, StepOneResult } from 'stores/onboarding';
 import { TextInput } from '../TextInput';
 
 type StepOneProps = {
+  btnSubmitLabel: string;
   onNextPressed: (step: Step, formData: StepOneResult) => void;
 };
 
 export function StepOne(props: StepOneProps) {
-  const { onNextPressed } = props;
+  const { onNextPressed, btnSubmitLabel } = props;
   const [fullName, setFullName] = useState('');
   const [idNumber, setIDNumber] = useState('');
 
@@ -57,6 +58,7 @@ export function StepOne(props: StepOneProps) {
     <>
       <View style={{ flex: 1 }}>
         <TextInput
+          testID="fullName"
           accessible
           accessibilityLabel="full name"
           accessibilityHint="enter your full name"
@@ -65,6 +67,7 @@ export function StepOne(props: StepOneProps) {
           onChangeText={(_, text) => setFullName(text)}
         />
         <TextInput
+          testID="idNumber"
           accessible
           accessibilityLabel="ID number"
           accessibilityHint="enter your identify number"
@@ -74,7 +77,7 @@ export function StepOne(props: StepOneProps) {
             Alert.alert('Feature under construction', 'Please come back later.')
           }
           containerStyle={{ marginTop: Layout.spacing.lg }}
-          keyboardType="number-pad"
+          keyboardType="numeric"
           returnKeyType="next"
           value={idNumber}
           onChangeText={(_, text) => setIDNumber(text)}
@@ -82,10 +85,11 @@ export function StepOne(props: StepOneProps) {
         />
       </View>
       <Button
+        testID="btnNext"
         disabled={!isFormValid}
         onPress={handleNextPressed}
         preset="primary"
-        title="Next"
+        title={btnSubmitLabel}
         style={{ margin: Layout.spacing.lg }}
       />
     </>

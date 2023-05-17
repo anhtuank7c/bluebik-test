@@ -36,13 +36,16 @@ export function Pagination(props: PaginationProps) {
 
   return (
     <View style={{ backgroundColor: 'transparent', alignItems: 'center' }}>
-      <ScrollView
-        horizontal
-        contentContainerStyle={{ columnGap: 10 }}
-        style={{ paddingVertical: 10 }}
+      <View
+        style={{
+          paddingVertical: 10,
+          flexDirection: 'row',
+          columnGap: 10,
+          backgroundColor: 'transparent',
+        }}
       >
         {data.map(renderStep)}
-      </ScrollView>
+      </View>
       <Text lightColor={Colors.light.textDisabled} darkColor={Colors.dark.textDisabled}>
         Step {currentStep}/{data.length}
       </Text>

@@ -7,11 +7,12 @@ import { Step, StepTwoResult } from 'stores/onboarding';
 import { TextInput } from '../TextInput';
 
 type StepTwoProps = {
+  btnSubmitLabel: string;
   onNextPressed: (step: Step, formData: StepTwoResult) => void;
 };
 
 export function StepTwo(props: StepTwoProps) {
-  const { onNextPressed } = props;
+  const { onNextPressed, btnSubmitLabel } = props;
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
@@ -34,6 +35,7 @@ export function StepTwo(props: StepTwoProps) {
     <>
       <View style={{ flex: 1 }}>
         <TextInput
+          testID="email"
           accessible
           accessibilityLabel="Email"
           accessibilityHint="enter your email"
@@ -44,6 +46,7 @@ export function StepTwo(props: StepTwoProps) {
           onChangeText={(_, text) => setEmail(text)}
         />
         <TextInput
+          testID="phoneNumber"
           accessible
           accessibilityLabel="Phone number"
           accessibilityHint="enter your phone number"
@@ -56,6 +59,7 @@ export function StepTwo(props: StepTwoProps) {
           onChangeText={(_, text) => setPhoneNumber(text)}
         />
         <TextInput
+          testID="dateOfBirth"
           accessible
           accessibilityLabel="Date of birth"
           accessibilityHint="enter your birth of date"
@@ -66,17 +70,17 @@ export function StepTwo(props: StepTwoProps) {
           }
           containerStyle={{ marginTop: Layout.spacing.lg }}
           keyboardType="number-pad"
-          returnKeyType="done"
           mask={Masks.DATE_DDMMYYYY}
           value={dateOfBirth}
           onChangeText={(_, text) => setDateOfBirth(text)}
         />
       </View>
       <Button
+        testID="btnNext"
         disabled={!isFormValid}
         onPress={handleNextPressed}
         preset="primary"
-        title="Next"
+        title={btnSubmitLabel}
         style={{ margin: Layout.spacing.lg }}
       />
     </>

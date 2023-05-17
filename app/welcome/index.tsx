@@ -22,14 +22,19 @@ export default function WelcomeScreen() {
         padding: Layout.spacing.lg,
       }}
     >
-      <Ionicons name="medal-outline" size={88} color={color} />
-      <Text preset="heading" style={{ paddingBottom: Layout.spacing.lg }}>
+      <Ionicons testID="iconMedal" name="medal-outline" size={88} color={color} />
+      <Text
+        testID="txtCongratulation"
+        preset="heading"
+        style={{ paddingBottom: Layout.spacing.lg }}
+      >
         Congratulation
       </Text>
       <Text preset="secondary" style={{ paddingBottom: Layout.spacing.lg }}>
         You has been passed all the onboarding steps.
       </Text>
       <Button
+        testID="btnShuffle"
         title="Shuffle onboarding steps"
         onPress={() => {
           shuffleSteps();

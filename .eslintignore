@@ -3,3 +3,4 @@ babel.config.js
 metro.config.js
 components/**/*-test.js
 __mocks__
+e2e

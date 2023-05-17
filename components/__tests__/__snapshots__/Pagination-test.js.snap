@@ -14,64 +14,64 @@ exports[`renders correctly 1`] = `
     ]
   }
 >
-  <RCTScrollView
-    contentContainerStyle={
-      {
-        "columnGap": 10,
-      }
-    }
-    horizontal={true}
+  <View
     style={
-      {
-        "paddingVertical": 10,
-      }
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "backgroundColor": "transparent",
+          "columnGap": 10,
+          "flexDirection": "row",
+          "paddingVertical": 10,
+        },
+      ]
     }
   >
-    <View>
-      <View
-        style={
-          [
-            {
-              "backgroundColor": "#33449b",
-            },
-            {
-              "borderRadius": 5,
-              "height": 5,
-              "width": 30,
-            },
-          ]
-        }
-      />
-      <View
-        style={
-          [
-            {
-              "backgroundColor": "rgba(1,1,1,0.1)",
-            },
-            {
-              "borderRadius": 5,
-              "height": 5,
-              "width": 30,
-            },
-          ]
-        }
-      />
-      <View
-        style={
-          [
-            {
-              "backgroundColor": "rgba(1,1,1,0.1)",
-            },
-            {
-              "borderRadius": 5,
-              "height": 5,
-              "width": 30,
-            },
-          ]
-        }
-      />
-    </View>
-  </RCTScrollView>
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#33449b",
+          },
+          {
+            "borderRadius": 5,
+            "height": 5,
+            "width": 30,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "rgba(1,1,1,0.1)",
+          },
+          {
+            "borderRadius": 5,
+            "height": 5,
+            "width": 30,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "rgba(1,1,1,0.1)",
+          },
+          {
+            "borderRadius": 5,
+            "height": 5,
+            "width": 30,
+          },
+        ]
+      }
+    />
+  </View>
   <Text
     style={
       [

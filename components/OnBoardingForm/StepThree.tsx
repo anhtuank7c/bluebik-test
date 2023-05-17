@@ -6,17 +6,18 @@ import { ListItem } from '../ListItem';
 import { Button } from '../Button';
 
 type StepThreeProps = {
+  btnSubmitLabel: string;
   onNextPressed: (step: Step, formData: string[]) => void;
 };
 const options = ['Money transfer', 'Payment', 'Bill payment', 'Loan', 'Investment', 'Saving'];
 export function StepThree(props: StepThreeProps) {
-  const { onNextPressed } = props;
+  const { onNextPressed, btnSubmitLabel } = props;
   const [selected, setSelected] = useState<string[]>([]);
 
   const isFormValid = useMemo(() => selected.length > 0, [selected]);
 
   const renderListItem = useCallback(
-    (option: string) => {
+    (option: string, index: number) => {
       const isSelected = selected.includes(option);
       const handleListItemPressed = (newValue: boolean) => {
         setSelected(prev => {
@@ -31,6 +32,7 @@ export function StepThree(props: StepThreeProps) {
 
       return (
         <ListItem
+          testID={`listitem-${index}`}
           key={option}
           title={option}
           value={isSelected}
@@ -45,10 +47,11 @@ export function StepThree(props: StepThreeProps) {
     <>
       <View style={{ flex: 1 }}>{options.map(renderListItem)}</View>
       <Button
+        testID="btnFinish"
         disabled={!isFormValid}
         onPress={() => onNextPressed('StepThree', selected)}
         preset="primary"
-        title="Finish"
+        title={btnSubmitLabel}
         style={{ margin: Layout.spacing.lg }}
       />
     </>
