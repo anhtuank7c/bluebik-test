@@ -1,0 +1,5 @@
+node_modules
+babel.config.js
+metro.config.js
+components/**/*-test.js
+__mocks__
